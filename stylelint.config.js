@@ -5,15 +5,16 @@ export default {
     'at-rule-no-unknown': null,
     'selector-class-pattern': null,
     'selector-pseudo-element-no-unknown': [true, { ignorePseudoElements: ['ng-deep'] }],
+    'no-empty-source': null,
   },
   overrides: [
     {
-      files: ['**/*.component.ts'],
+      files: ['**/*.components.ts'],
       customSyntax: 'postcss-angular',
       rules: {
         'no-empty-source': null,
       },
     },
   ],
-  ignoreFiles: ['**/*', '!src/**/*.scss', '!src/**/*.component.ts'],
+  ignoreFiles: ['**/*', '!src/**/*.scss', '!src/**/*.components.ts'],
 };
