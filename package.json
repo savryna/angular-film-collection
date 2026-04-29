@@ -1,12 +1,22 @@
 {
   "name": "film-collection",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "type-check": "tsc -b --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint src --ext .ts,.html",
+    "lint:fix": "eslint src --ext .ts,.html --fix",
+    "lint:styles:fix": "stylelint src/**/*.css --fix",
+    "lint:styles": "stylelint src/**/*.css",
+    "lint-staged": "lint-staged",
+    "prepare": "husky"
   },
   "private": true,
   "packageManager": "npm@11.11.0",
@@ -17,6 +27,10 @@
     "@angular/forms": "^21.2.0",
     "@angular/platform-browser": "^21.2.0",
     "@angular/router": "^21.2.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.5",
+    "eslint-plugin-unused-imports": "^4.4.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
@@ -24,9 +38,19 @@
     "@angular/build": "^21.2.1",
     "@angular/cli": "^21.2.1",
     "@angular/compiler-cli": "^21.2.0",
+    "@commitlint/cli": "^20.5.2",
+    "@commitlint/config-conventional": "^20.5.0",
+    "@eslint/js": "^9.39.4",
+    "angular-eslint": "21.3.1",
+    "eslint": "^9.39.4",
+    "husky": "^9.1.7",
     "jsdom": "^28.0.0",
+    "lint-staged": "^16.4.0",
     "prettier": "^3.8.1",
+    "stylelint": "^17.9.1",
+    "stylelint-config-standard": "^40.0.0",
     "typescript": "~5.9.2",
+    "typescript-eslint": "8.56.1",
     "vitest": "^4.0.8"
   }
 }
