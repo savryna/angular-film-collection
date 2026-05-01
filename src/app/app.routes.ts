@@ -16,10 +16,12 @@ export const routes: Routes = [
       {
         path: ROUTES_LIST.main,
         component: FilmListPageComponent,
+        data: { breadcrumbs: 'Main Page' },
       },
       {
         path: ROUTES_LIST.about,
         component: AboutComponent,
+        data: { breadcrumbs: 'About Page' },
       },
       {
         path: ROUTES_LIST.detailed,
