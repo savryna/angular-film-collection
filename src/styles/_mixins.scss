@@ -5,3 +5,13 @@
   background: url('/img/noise-bg.png');
   background-size: 100px;
 }
+
+@mixin hover-animation {
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    border-radius: variables.$radius-sm;
+    color: variables.$primary-dark;
+    background-color: variables.$accent-green;
+  }
+}

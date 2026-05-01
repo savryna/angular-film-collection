@@ -12,14 +12,10 @@
   padding: 10px;
 
   .nav-link {
+    @include mixins.hover-animation;
+
     padding: 5px 15px;
     font-size: 24px;
     transition: all 0.2s ease-in-out;
-
-    &:hover {
-      border-radius: variables.$radius-sm;
-      color: variables.$primary-dark;
-      background-color: variables.$accent-green;
-    }
   }
 }
