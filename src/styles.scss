@@ -7,7 +7,12 @@
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+
   color: variables.$primary-light;
+
   background: url('/img/noise-bg.png');
   background-size: 100px;
 }

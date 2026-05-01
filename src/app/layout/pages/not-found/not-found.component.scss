@@ -1,0 +1,119 @@
+@use 'sass:math';
+@use 'variables';
+
+:host {
+  display: block;
+
+  background-image: url('/img/bg-404.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+
+  backdrop-filter: blur(2px);
+}
+
+.glitch {
+  user-select: none;
+
+  position: relative;
+
+  width: max-content;
+
+  font-family: Orbitron, sans-serif;
+  font-size: clamp(20px, 8vw, 100px);
+  font-weight: bold;
+  line-height: normal;
+  color: variables.$accent-green;
+}
+
+.glitch::before {
+  content: '404 - SIGNAL LOST';
+
+  position: absolute;
+  top: 0;
+  left: 2px;
+
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+
+  text-shadow: -2px -2px variables.$glitch-blue;
+
+  clip-path: inset(30% 0 30% 0);
+
+  animation: noise-anim-before 15s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  content: '404 - SIGNAL LOST';
+
+  position: absolute;
+  top: 0;
+  left: -2px;
+
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+
+  text-shadow: -2px -2px variables.$glitch-red;
+
+  clip-path: inset(30% 0 30% 0);
+
+  animation: noise-anim-after 15s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim-before {
+  $steps: 20;
+
+  @for $i from 0 through $steps {
+    #{percentage($i * (1 / $steps))} {
+      $top: math.random(100);
+      $bottom: math.random(101 - $top);
+      $top-with-percent: $top * 1%;
+      $bottom-with-percent: $bottom * 1%;
+
+      clip-path: inset(#{$top-with-percent} 0 #{$bottom-with-percent} 0);
+    }
+  }
+}
+
+@keyframes noise-anim-after {
+  $steps: 20;
+
+  @for $i from 0 through $steps {
+    #{percentage($i * (1 / $steps))} {
+      $top: math.random(100);
+      $bottom: math.random(101 - $top);
+      $top-with-percent: $top * 1%;
+      $bottom-with-percent: $bottom * 1%;
+
+      clip-path: inset(#{$top-with-percent} 0 #{$bottom-with-percent} 0);
+    }
+  }
+}
+
+@media (width <= 768px) {
+  .glitch::before,
+  .glitch::after {
+    content: '';
+    clip-path: none;
+    animation: none;
+  }
+
+  .glitch {
+    text-shadow:
+      -2px 0 variables.$glitch-red,
+      2px 0 variables.$glitch-blue;
+  }
+}
