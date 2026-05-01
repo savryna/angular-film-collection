@@ -1,0 +1,20 @@
+@use 'mixins';
+
+.footer-container {
+  @include mixins.dark-bg;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  .github-link {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    .footer-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
