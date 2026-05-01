@@ -1,0 +1,7 @@
+@use 'variables';
+
+@mixin dark-bg {
+  border-radius: variables.$radius-md;
+  background: url('/img/noise-bg.png');
+  background-size: 100px;
+}

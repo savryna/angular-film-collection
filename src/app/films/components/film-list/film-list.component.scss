@@ -1,10 +1,10 @@
 @use 'variables';
+@use 'mixins';
 
 :host {
+  @include mixins.dark-bg;
+
   display: block;
-  border-radius: variables.$radius-md;
-  background: url('/img/noise-bg.png');
-  background-size: 100px;
 }
 
 .films-container {

@@ -1,4 +1,5 @@
 @use 'variables';
+@use 'mixins';
 
 :host {
   display: block;
@@ -6,12 +7,9 @@
 }
 
 .app-title {
-  margin: 5px 0;
-  border-radius: variables.$radius-md;
+  @include mixins.dark-bg;
 
+  margin: 5px 0;
   font-size: clamp(1rem, 8vw, 7rem);
   text-align: center;
-
-  background: url('/img/noise-bg.png');
-  background-size: 100px;
 }

@@ -1,16 +1,15 @@
 @use 'variables';
+@use 'mixins';
 
 .nav {
+  @include mixins.dark-bg;
+
   display: flex;
   gap: 30px;
   justify-content: center;
 
   margin-bottom: 5px;
   padding: 10px;
-  border-radius: variables.$radius-md;
-
-  background: url('/img/noise-bg.png');
-  background-size: 100px;
 
   .nav-link {
     padding: 5px 15px;
