@@ -1,6 +1,6 @@
 @let film = filmData();
 
-<div class="film-card">
+<a class="film-card" routerLink="film/{{ film.id }}">
   <div class="film-info">
     <span class="info-text">{{ film.genre }}</span>
     <span class="info-text">{{ film.year }}</span>
@@ -15,4 +15,4 @@
       <span class="material-symbols-outlined favorite-icon"> favorite </span>
     </button>
   </div>
-</div>
+</a>
