@@ -10,6 +10,55 @@
   background-size: cover;
 }
 
+.home-link {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  width: clamp(200px, 38vw, 400px);
+  padding: 10px;
+  border: 1px solid variables.$primary-light;
+  border-radius: variables.$radius-md;
+
+  background-color: variables.$glitch-blue;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: variables.$primary-dark;
+    background-color: variables.$accent-green;
+
+    .home-link-text,
+    .home-link-icon {
+      text-shadow:
+        -3px -1px variables.$glitch-red,
+        -1px 3px variables.$glitch-blue;
+    }
+  }
+
+  .home-link-text {
+    font-family: Orbitron, sans-serif;
+    font-size: clamp(16px, 3vw, 36px);
+    text-shadow:
+      -3px -3px variables.$primary-dark,
+      2px 3px variables.$glitch-red;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .home-link-icon {
+    width: clamp(24px, 3vw, 36px);
+    height: clamp(24px, 3vw, 36px);
+
+    font-size: clamp(24px, 3vw, 36px);
+    text-shadow:
+      -3px -3px variables.$primary-dark,
+      2px 3px variables.$glitch-red;
+
+    transition: all 0.5s ease-in-out;
+  }
+}
+
 .page-wrapper {
   display: flex;
   flex-direction: column;
