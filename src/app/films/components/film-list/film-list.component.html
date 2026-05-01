@@ -1,1 +1,5 @@
-<p>film-list works!</p>
+<div class="films-container">
+  @for (filmItem of films; track filmItem.id) {
+    <app-film-card [filmData]="filmItem"></app-film-card>
+  }
+</div>
