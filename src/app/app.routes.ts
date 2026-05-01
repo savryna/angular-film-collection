@@ -4,6 +4,7 @@ import { FilmDetailsComponent } from './films/pages/film-details/film-details.co
 import { FilmListPageComponent } from './films/pages/film-list/film-list-page.component';
 import { EmptyLayoutComponent } from './layout/components/empty-layout/empty-layout.component';
 import { MainLayoutComponent } from './layout/components/main-layout/main-layout.component';
+import { AboutComponent } from './layout/pages/about/about.component';
 import { NotFoundComponent } from './layout/pages/not-found/not-found.component';
 import { ROUTES_LIST } from './shared/constans';
 
@@ -15,6 +16,10 @@ export const routes: Routes = [
       {
         path: ROUTES_LIST.main,
         component: FilmListPageComponent,
+      },
+      {
+        path: ROUTES_LIST.about,
+        component: AboutComponent,
       },
       {
         path: ROUTES_LIST.detailed,

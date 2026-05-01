@@ -1,0 +1,26 @@
+@use 'variables';
+
+.nav {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: variables.$radius-md;
+
+  background: url('/img/noise-bg.png');
+  background-size: 100px;
+
+  .nav-link {
+    padding: 5px 15px;
+    font-size: 24px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      border-radius: variables.$radius-sm;
+      color: variables.$primary-dark;
+      background-color: variables.$accent-green;
+    }
+  }
+}

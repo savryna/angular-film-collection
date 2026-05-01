@@ -10,4 +10,12 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   protected readonly title = signal('film-collection');
+
+  constructor() {
+    [...document.querySelectorAll('*')].forEach((el) => {
+      if (el.scrollWidth > document.documentElement.clientWidth) {
+        console.log('OVERFLOW:', el);
+      }
+    });
+  }
 }

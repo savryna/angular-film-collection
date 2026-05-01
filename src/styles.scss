@@ -7,14 +7,10 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
   margin: 0;
-
+  font-family: Orbitron, sans-serif;
   color: variables.$primary-light;
-
-  background: url('/img/noise-bg.png');
-  background-size: 100px;
+  background-color: variables.$primary-light;
 }
 
 button {

@@ -1,5 +1,17 @@
+@use 'variables';
+
+:host {
+  display: block;
+  border-radius: variables.$radius-md;
+  background: url('/img/noise-bg.png');
+  background-size: 100px;
+}
+
 .films-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 50px 10px;
+
+  max-width: 1440px;
+  margin: auto;
 }
