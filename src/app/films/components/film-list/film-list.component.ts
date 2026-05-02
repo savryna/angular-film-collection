@@ -16,7 +16,7 @@ export class FilmListComponent {
   private readonly filmService = inject(FilmService);
   private readonly router = inject(Router);
 
-  public readonly films = this.filmService.films();
+  public readonly films = this.filmService.films;
 
   public redirectDetailsPage(film: FilmData): void {
     void this.router.navigate(['/film/', film.id], {

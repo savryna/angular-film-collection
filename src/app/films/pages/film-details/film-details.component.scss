@@ -20,6 +20,8 @@
   padding: 20px;
 
   .detailed-description {
+    position: relative;
+
     padding: 10px;
     border-radius: variables.$radius-md;
 
@@ -27,6 +29,12 @@
     color: variables.$primary-dark;
 
     background-color: variables.$primary-light;
+
+    .toggle-btn {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+    }
   }
 
   .detailed-info {

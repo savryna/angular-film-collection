@@ -1,5 +1,5 @@
 <div class="films-container">
-  @for (filmItem of films; track filmItem.id) {
+  @for (filmItem of films(); track filmItem.id) {
     <app-film-card [filmData]="filmItem" (filmClick)="redirectDetailsPage(filmItem)"></app-film-card>
   }
 </div>

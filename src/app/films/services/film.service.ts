@@ -23,6 +23,10 @@ export class FilmService {
     return film;
   }
 
+  public getFavoriteStatus(id: number): boolean | undefined {
+    return this.getFilmById(id)?.isFavorite;
+  }
+
   public toggleFavoriteStatus(id: number): void {
     this.filmsSignal.update((films) => {
       return films.map((film) => {

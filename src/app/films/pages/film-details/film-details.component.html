@@ -1,24 +1,29 @@
 <div class="detailed-container">
   <div class="detailed-description">
-    {{ film?.description }}
+    <span>{{ film()?.description }}</span>
+    <app-favorite-btn
+      [favoriteStatus]="film()?.isFavorite ?? false"
+      (clicked)="toggleStatus(film()?.id)"
+      class="toggle-btn"
+    ></app-favorite-btn>
   </div>
   <div class="detailed-info">
-    <p class="info-text">{{ film?.year }} year</p>
+    <p class="info-text">{{ film()?.year }} year</p>
     <p class="info-text">
       <span class="material-symbols-outlined"> star </span>
-      {{ film?.rating }}
+      {{ film()?.rating }}
     </p>
     <p class="info-text">
       <span class="material-symbols-outlined"> theaters </span>
-      {{ film?.genre }}
+      {{ film()?.genre }}
     </p>
     <p class="info-text">
       <span class="material-symbols-outlined"> hourglass_empty </span>
-      {{ film?.duration | duration }}
+      {{ film()?.duration | duration }}
     </p>
   </div>
   <div class="detailed-poster">
-    <img class="film-img" [src]="film?.posterUrl" alt="film poster" />
+    <img class="film-img" [src]="film()?.posterUrl" alt="film poster" />
   </div>
-  <h5 class="film-title">{{ film?.title }}</h5>
+  <h5 class="film-title">{{ film()?.title }}</h5>
 </div>

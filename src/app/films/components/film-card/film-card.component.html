@@ -1,7 +1,6 @@
 @let film = filmData();
 
 <button class="film-card" (click)="filmClick.emit()">
-  <!--   routerLink="film/{{ film.id }}"-->
   <div class="film-info">
     <span class="info-text">{{ film.genre }}</span>
     <span class="info-text">{{ film.year }}</span>
@@ -12,8 +11,6 @@
   </div>
   <div class="film-card-footer">
     <h5 class="film-name">{{ film.title }}</h5>
-    <button class="favorite-toggle">
-      <span class="material-symbols-outlined favorite-icon"> favorite </span>
-    </button>
+    <app-favorite-btn [favoriteStatus]="film.isFavorite" (clicked)="toggleStatus(film.id)"></app-favorite-btn>
   </div>
 </button>
