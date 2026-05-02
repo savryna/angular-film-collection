@@ -3,11 +3,12 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ROUTES_LIST } from '../../../shared/constans';
+import { DurationPipe } from '../../pipes/duration-pipe';
 import { FilmService } from '../../services/film.service';
 
 @Component({
   selector: 'app-film-details',
-  imports: [],
+  imports: [DurationPipe],
   templateUrl: './film-details.component.html',
   styleUrl: './film-details.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

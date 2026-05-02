@@ -2,7 +2,9 @@
 @use 'mixins';
 
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0 10px;
 }
 
