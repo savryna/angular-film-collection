@@ -8,7 +8,6 @@
     <app-favorite-btn
       [favoriteStatus]="film()?.isFavorite ?? false"
       (clicked)="toggleStatus(film()?.id)"
-      class="toggle-btn"
     ></app-favorite-btn>
   </div>
   <div class="detailed-info">

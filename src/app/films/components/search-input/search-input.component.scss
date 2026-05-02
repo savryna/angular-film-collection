@@ -3,7 +3,7 @@
 .search-form {
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 
   .input-container {
     display: flex;
@@ -11,7 +11,7 @@
     align-items: center;
 
     width: clamp(300px, 30vw, 500px);
-    padding: 10px 35px;
+    padding: 8px 35px;
     border: 1px solid variables.$primary-light;
     border-radius: variables.$radius-lg;
 
@@ -22,7 +22,7 @@
       border-bottom: 1px solid variables.$primary-light;
 
       font-family: Orbitron, sans-serif;
-      font-size: 26px;
+      font-size: 20px;
       color: variables.$primary-light;
 
       background: transparent;

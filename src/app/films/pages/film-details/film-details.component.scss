@@ -5,12 +5,12 @@
   display: flex;
   flex: 1;
   flex-direction: column;
+  gap: 20px;
 
   margin-bottom: 5px;
+  padding: 20px;
 
   @include mixins.dark-bg;
-
-  padding: 20px;
 }
 
 .prev-btn {
@@ -19,12 +19,12 @@
   display: flex;
   align-items: center;
 
-  width: clamp(180px, 20vw, 200px);
+  width: clamp(190px, 20vw, 200px);
   padding: 10px 30px;
   border-radius: variables.$radius-md;
 
   font-family: Orbitron, sans-serif;
-  font-size: clamp(1.2rem, 3vw, 20px);
+  font-size: clamp(1.1rem, 3vw, 20px);
 
   background-color: variables.$accent-green;
 
@@ -49,10 +49,12 @@
 
   max-width: 1000px;
   margin: auto;
-  padding: 20px;
 
   .detailed-description {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
 
     padding: 10px;
     border-radius: variables.$radius-md;
@@ -61,12 +63,6 @@
     color: variables.$primary-dark;
 
     background-color: variables.$primary-light;
-
-    .toggle-btn {
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
-    }
   }
 
   .detailed-info {
@@ -84,7 +80,7 @@
       border: 1px solid variables.$primary-light;
       border-radius: variables.$radius-md;
 
-      font-size: 24px;
+      font-size: clamp(20px, 1rem, 24px);
     }
   }
 
@@ -105,9 +101,27 @@
     padding: 10px;
     border-radius: variables.$radius-md;
 
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 2rem, 50px);
     color: variables.$primary-dark;
+    text-align: center;
 
     background-color: variables.$accent-green;
+  }
+}
+
+@media (width <= 750px) {
+  .detailed-container {
+    grid-template-columns: 1fr;
+
+    .detailed-poster {
+      grid-column: 1/3;
+      grid-row: 1/2;
+    }
+  }
+}
+
+@media (width <= 450px) {
+  .detailed-description {
+    grid-column: 1/3;
   }
 }
