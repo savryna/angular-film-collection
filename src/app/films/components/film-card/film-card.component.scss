@@ -3,6 +3,7 @@
 .film-card {
   min-height: 500px;
   padding: 10px;
+  color: variables.$primary-light;
 
   .film-info {
     display: flex;
@@ -38,6 +39,7 @@
       margin: 0;
       font-size: 28px;
       font-weight: normal;
+      text-align: left;
     }
 
     .favorite-toggle {
