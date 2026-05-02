@@ -58,7 +58,7 @@ export class BreadcrumbsComponent {
             },
 
             {
-              label: state?.filmTitle ?? this.filmService.currentFilm()?.title ?? 'Unknow Film',
+              label: state?.filmTitle ?? this.filmService.currentFilm()?.title ?? 'Unknown Film',
             },
           ]
         );
