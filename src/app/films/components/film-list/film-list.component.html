@@ -1,4 +1,4 @@
-@let filmsSearch = films() | searchByWorld: searchWord();
+@let filmsSearch = filteredFilms();
 
 <div class="films-list-page">
   <app-search-input (searchWordChange)="setSearchWord($event)"></app-search-input>
