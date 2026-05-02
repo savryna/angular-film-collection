@@ -1,0 +1,40 @@
+@use 'mixins';
+@use 'variables';
+
+:host {
+  @include mixins.dark-bg;
+
+  display: flex;
+  flex: 1;
+  margin-bottom: 5px;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    font-size: 24px;
+
+    .about-link {
+      font-size: 18px;
+      color: variables.$accent-green;
+    }
+  }
+
+  .its-me-gif {
+    width: 200px;
+  }
+}
