@@ -1,1 +1,5 @@
-<p>breadcrumbs works!</p>
+<div class="breadcrumbs-container">
+  @for (crumbs of breadcrumbs(); track $index) {
+    <span>{{ crumbs.label }}</span>
+  }
+</div>

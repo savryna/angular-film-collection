@@ -1,0 +1,5 @@
+@use 'mixins';
+
+.breadcrumbs-container {
+  @include mixins.dark-bg;
+}

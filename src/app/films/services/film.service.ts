@@ -8,11 +8,19 @@ import type { FilmData } from '../models/films.model';
 })
 export class FilmService {
   private readonly filmsSignal = signal<FilmData[]>(filmsData);
+  private readonly currentFilmSignal = signal<FilmData | null>(null);
   public readonly films = this.filmsSignal.asReadonly();
   public readonly favoriteFilms = computed(() => this.filmsSignal().filter((film) => film.isFavorite));
+  public readonly currentFilm = this.currentFilmSignal.asReadonly();
 
   public getFilmById(id: number): FilmData | undefined {
-    return this.filmsSignal().find((film) => film.id === id);
+    const film = this.filmsSignal().find((film) => film.id === id);
+    if (film !== undefined) {
+      this.currentFilmSignal.set(film);
+    } else {
+      this.currentFilmSignal.set(null);
+    }
+    return film;
   }
 
   public toggleFavoriteStatus(id: number): void {
