@@ -15,7 +15,7 @@
     @include mixins.hover-animation;
 
     padding: 5px 15px;
-    font-size: 24px;
+    font-size: clamp(1rem, 4vw, 24px);
     transition: all 0.2s ease-in-out;
   }
 }

@@ -1,9 +1,14 @@
 @use 'variables';
 
 .film-card {
-  min-height: 500px;
+  cursor: pointer;
+
+  max-width: 340px;
   padding: 10px;
+
   color: variables.$primary-light;
+
+  transition: all 0.2s ease-in-out;
 
   .film-info {
     display: flex;
@@ -22,6 +27,7 @@
 
   .film-poster {
     aspect-ratio: 9 / 14;
+    margin-bottom: 10px;
 
     .poster-img {
       width: 100%;
@@ -41,5 +47,9 @@
       font-weight: normal;
       text-align: left;
     }
+  }
+
+  &:hover {
+    transform: scale(0.95);
   }
 }
