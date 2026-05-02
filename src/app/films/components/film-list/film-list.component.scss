@@ -8,11 +8,25 @@
   margin-bottom: 5px;
 }
 
-.films-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px 10px;
+.films-list-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 
-  max-width: 1440px;
-  margin: auto;
+  padding: 20px;
+
+  .films-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px 10px;
+
+    max-width: 1440px;
+    margin: auto;
+  }
+
+  .empty-state {
+    font-size: clamp(16px, 3vw, 4em);
+    color: variables.$glitch-red;
+  }
 }

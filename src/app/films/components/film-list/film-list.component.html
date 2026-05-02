@@ -1,5 +1,14 @@
-<div class="films-container">
-  @for (filmItem of films(); track filmItem.id) {
-    <app-film-card [filmData]="filmItem" (filmClick)="redirectDetailsPage(filmItem)"></app-film-card>
+@let filmsSearch = films() | searchByWorld: searchWord();
+
+<div class="films-list-page">
+  <app-search-input (searchWordChange)="setSearchWord($event)"></app-search-input>
+  @if (filmsSearch.length > 0) {
+    <div class="films-container">
+      @for (filmItem of filmsSearch; track filmItem.id) {
+        <app-film-card [filmData]="filmItem" (filmClick)="redirectDetailsPage(filmItem)"></app-film-card>
+      }
+    </div>
+  } @else {
+    <div class="empty-state">No films found</div>
   }
 </div>

@@ -1,1 +1,5 @@
-<p>search-input works!</p>
+<form [formGroup]="searchForm">
+  <div class="input-container">
+    <input type="search" class="films-search-input" placeholder="start search..." formControlName="searchWord" />
+  </div>
+</form>
