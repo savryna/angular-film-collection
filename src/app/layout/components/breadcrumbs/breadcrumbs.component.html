@@ -1,5 +1,12 @@
 <div class="breadcrumbs-container">
-  @for (crumbs of breadcrumbs(); track $index) {
-    <span>{{ crumbs.label }}</span>
+  @for (crumbs of breadcrumbs(); track $index; let last = $last) {
+    @let crumbsLabel = crumbs.label;
+    @let crumbsUrl = crumbs.url;
+
+    @if (last) {
+      <span class="active-link">/{{ crumbsLabel }}</span>
+    } @else {
+      <a class="breadcrumbs-link" [routerLink]="crumbsUrl">/{{ crumbsLabel }}</a>
+    }
   }
 </div>

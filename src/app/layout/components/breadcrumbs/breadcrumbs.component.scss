@@ -1,5 +1,26 @@
 @use 'mixins';
+@use 'variables';
 
 .breadcrumbs-container {
   @include mixins.dark-bg;
+
+  display: flex;
+  gap: 5px;
+
+  margin-bottom: 5px;
+  padding: 10px 15px;
+
+  font-size: 24px;
+
+  .breadcrumbs-link {
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: variables.$accent-green;
+    }
+  }
+
+  .active-link {
+    color: variables.$accent-green;
+  }
 }
