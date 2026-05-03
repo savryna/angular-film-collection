@@ -1,0 +1,35 @@
+@use 'mixins';
+@use 'variables';
+
+.footer-container {
+  @include mixins.dark-bg;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+
+  .github-link {
+    @include mixins.hover-animation;
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 5px 10px;
+
+    &:hover {
+      .footer-icon svg {
+        fill: variables.$primary-dark;
+      }
+    }
+
+    .footer-icon {
+      width: 24px;
+      height: 24px;
+
+      svg {
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}

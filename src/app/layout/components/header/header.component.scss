@@ -1,0 +1,21 @@
+@use 'variables';
+@use 'mixins';
+
+.nav {
+  @include mixins.dark-bg;
+
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+
+  margin-bottom: 5px;
+  padding: 10px;
+
+  .nav-link {
+    @include mixins.hover-animation;
+
+    padding: 5px 15px;
+    font-size: clamp(1rem, 4vw, 24px);
+    transition: all 0.2s ease-in-out;
+  }
+}

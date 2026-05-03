@@ -1,0 +1,9 @@
+@use 'mixins';
+
+:host {
+  @include mixins.dark-bg;
+
+  display: block;
+  flex: 1;
+  margin-bottom: 5px;
+}

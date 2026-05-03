@@ -1,0 +1,16 @@
+@let film = filmData();
+
+<button class="film-card" (click)="filmClick.emit()">
+  <div class="film-info">
+    <span class="info-text">{{ film.genre }}</span>
+    <span class="info-text">{{ film.year }}</span>
+    <span class="info-text">{{ film.rating }}</span>
+  </div>
+  <div class="film-poster">
+    <img class="poster-img" [src]="film.posterUrl" alt="film poster" />
+  </div>
+  <div class="film-card-footer">
+    <h5 class="film-name">{{ film.title }}</h5>
+    <app-favorite-btn [favoriteStatus]="film.isFavorite" (clicked)="toggleStatus(film.id)"></app-favorite-btn>
+  </div>
+</button>

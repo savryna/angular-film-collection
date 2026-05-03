@@ -1,0 +1,32 @@
+<button class="prev-btn" (click)="goBack()">
+  <span class="material-symbols-outlined back-btn-icon" style="font-variation-settings: 'FILL' 1"> fast_forward </span>
+  <span> Go Back</span>
+</button>
+<div class="detailed-container">
+  <div class="detailed-description">
+    <span>{{ film()?.description }}</span>
+    <app-favorite-btn
+      [favoriteStatus]="film()?.isFavorite ?? false"
+      (clicked)="toggleStatus(film()?.id)"
+    ></app-favorite-btn>
+  </div>
+  <div class="detailed-info">
+    <p class="info-text">{{ film()?.year }} year</p>
+    <p class="info-text">
+      <span class="material-symbols-outlined"> star </span>
+      {{ film()?.rating }}
+    </p>
+    <p class="info-text">
+      <span class="material-symbols-outlined"> theaters </span>
+      {{ film()?.genre }}
+    </p>
+    <p class="info-text">
+      <span class="material-symbols-outlined"> hourglass_empty </span>
+      {{ film()?.duration | duration }}
+    </p>
+  </div>
+  <div class="detailed-poster">
+    <img class="film-img" [src]="film()?.posterUrl" alt="film poster" />
+  </div>
+  <h5 class="film-title">{{ film()?.title }}</h5>
+</div>
