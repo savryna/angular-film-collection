@@ -14,13 +14,11 @@ export class FilmService {
   public readonly currentFilm = this.currentFilmSignal.asReadonly();
 
   public getFilmById(id: number): FilmData | undefined {
-    const film = this.filmsSignal().find((film) => film.id === id);
-    if (film !== undefined) {
-      this.currentFilmSignal.set(film);
-    } else {
-      this.currentFilmSignal.set(null);
-    }
-    return film;
+    return this.filmsSignal().find((film) => film.id === id);
+  }
+
+  public setCurrentFilm(film: FilmData | null): void {
+    this.currentFilmSignal.set(film);
   }
 
   public getFavoriteStatus(id: number): boolean | undefined {

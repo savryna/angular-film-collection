@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import type { OnInit } from '@angular/core';
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, effect, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { FavoriteBtnComponent } from '../../../shared/button/favorite-btn/favorite-btn.component';
@@ -21,10 +21,17 @@ export class FilmDetailsComponent implements OnInit {
   private readonly location = inject(Location);
   private readonly filmService = inject(FilmService);
   public filmId = Number(this.activateRoute.snapshot.params['id']);
-  public film = computed(() => this.filmService.films().find((f) => f.id === this.filmId));
+  public film = computed(() => this.filmService.getFilmById(this.filmId));
+
+  constructor() {
+    effect(() => {
+      this.filmService.setCurrentFilm(this.film() ?? null);
+    });
+  }
 
   public ngOnInit(): void {
-    if (this.film === undefined) {
+    console.log('hooo', this.film());
+    if (this.film() === undefined) {
       void this.router.navigate([ROUTES_LIST.notFound]);
     }
   }
