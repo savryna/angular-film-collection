@@ -30,7 +30,6 @@ export class FilmDetailsComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    console.log('hooo', this.film());
     if (this.film() === undefined) {
       void this.router.navigate([ROUTES_LIST.notFound]);
     }

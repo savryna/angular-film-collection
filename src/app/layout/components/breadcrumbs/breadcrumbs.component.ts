@@ -27,7 +27,6 @@ export class BreadcrumbsComponent {
       this.router.currentNavigation();
 
       if (this.router.url !== '') {
-        console.log('hihihi', event, this.router.url);
         this.buildBreadcrumbs();
       }
     });
@@ -67,7 +66,5 @@ export class BreadcrumbsComponent {
       currentRoute = currentRoute.firstChild;
       this.breadcrumbs.set(breadcrumbs);
     }
-
-    console.log('bibibi', breadcrumbs);
   }
 }
