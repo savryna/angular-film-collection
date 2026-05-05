@@ -1,4 +1,3 @@
-import type { WritableSignal } from '@angular/core';
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -20,7 +19,7 @@ export class FilmListComponent {
 
   public readonly films = this.filmService.films;
 
-  public readonly searchWord: WritableSignal<null | string> = signal(null);
+  public readonly searchWord = signal<string | null>(null);
 
   public readonly filteredFilms = computed(() => this.filterFilms());
 

@@ -1,4 +1,3 @@
-import type { InputSignal } from '@angular/core';
 import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
 
 import type { FilmData } from '../../models/films.model';
@@ -14,7 +13,7 @@ import { FavoriteBtnComponent } from '../favorite-btn/favorite-btn.component';
 })
 export class FilmCardComponent {
   private readonly filmService = inject(FilmService);
-  public filmData: InputSignal<FilmData> = input.required();
+  public filmData = input.required<FilmData>();
   public readonly filmClick = output<void>();
 
   public toggleStatus(id: number): void {
