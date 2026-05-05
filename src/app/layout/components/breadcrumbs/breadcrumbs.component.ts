@@ -51,7 +51,7 @@ export class BreadcrumbsComponent {
           ...[
             state?.from ?? {
               label: state.from?.label ?? 'Home',
-              url: state.from?.url ?? ROUTES_LIST.main,
+              url: state.from?.url ?? ROUTES_LIST.home,
             },
 
             {

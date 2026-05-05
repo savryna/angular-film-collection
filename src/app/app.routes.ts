@@ -14,7 +14,7 @@ export const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       {
-        path: ROUTES_LIST.main,
+        path: ROUTES_LIST.home,
         component: FilmListPageComponent,
         data: { breadcrumbs: 'Home' },
       },
