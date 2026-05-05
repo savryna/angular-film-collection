@@ -10,7 +10,7 @@ This application was developed as part of a learning project focused on masterin
 [RSS Angular film collection](https://github.com/rolling-scopes-school/tasks/blob/master/angular/tasks/angular-intro-task/README.md)
 
 🚀 Live demo:
-[film collection deploy](https://savryna.github.io/angular-film-collection/)
+[film collection deploy]([https://savryna.github.io/angular-film-collection/](https://angular-film-collection-beta.vercel.app/angular-film-collection/))
 
 ## Development server
 
