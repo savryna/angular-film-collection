@@ -1,10 +1,9 @@
 import { Location } from '@angular/common';
-import type { OnInit } from '@angular/core';
 import { ChangeDetectionStrategy, Component, computed, effect, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { FavoriteBtnComponent } from '../../../shared/button/favorite-btn/favorite-btn.component';
 import { ROUTES_LIST } from '../../../shared/constans';
+import { FavoriteBtnComponent } from '../../components/favorite-btn/favorite-btn.component';
 import { DurationPipe } from '../../pipes/duration-pipe';
 import { FilmService } from '../../services/film.service';
 
@@ -15,13 +14,19 @@ import { FilmService } from '../../services/film.service';
   styleUrl: './film-details.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FilmDetailsComponent implements OnInit {
+export class FilmDetailsComponent {
   private readonly activateRoute = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly location = inject(Location);
   private readonly filmService = inject(FilmService);
   public filmId = Number(this.activateRoute.snapshot.params['id']);
-  public film = computed(() => this.filmService.getFilmById(this.filmId));
+  public film = computed(() => {
+    const filmById = this.filmService.getFilmById(this.filmId)!;
+    if (filmById === undefined) {
+      void this.router.navigate([ROUTES_LIST.notFound]);
+    }
+    return filmById;
+  });
 
   constructor() {
     effect(() => {
@@ -29,16 +34,8 @@ export class FilmDetailsComponent implements OnInit {
     });
   }
 
-  public ngOnInit(): void {
-    if (this.film() === undefined) {
-      void this.router.navigate([ROUTES_LIST.notFound]);
-    }
-  }
-
-  public toggleStatus(id: number | undefined): void {
-    if (id !== undefined) {
-      this.filmService.toggleFavoriteStatus(id);
-    }
+  public toggleStatus(id: number): void {
+    this.filmService.toggleFavoriteStatus(id);
   }
 
   public goBack(): void {

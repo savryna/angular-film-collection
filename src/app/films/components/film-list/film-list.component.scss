@@ -1,24 +1,20 @@
 @use 'variables';
 @use 'mixins';
 
-.films-list-page {
-  padding: 20px;
+.films-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+  gap: 20px 10px;
+  place-items: start center;
+  justify-content: center;
 
-  .films-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
-    gap: 20px 10px;
-    place-items: start center;
-    justify-content: center;
+  max-width: 1440px;
+  margin: auto;
+}
 
-    max-width: 1440px;
-    margin: auto;
-  }
-
-  .empty-state {
-    padding-top: 100px;
-    font-size: clamp(16px, 3vw, 4em);
-    color: variables.$glitch-red;
-    text-align: center;
-  }
+.empty-state {
+  padding-top: 100px;
+  font-size: clamp(16px, 3vw, 4em);
+  color: variables.$glitch-red;
+  text-align: center;
 }

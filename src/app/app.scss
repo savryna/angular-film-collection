@@ -1,0 +1,6 @@
+@use 'variables';
+
+:host {
+  display: block;
+  background-color: variables.$primary-light;
+}
