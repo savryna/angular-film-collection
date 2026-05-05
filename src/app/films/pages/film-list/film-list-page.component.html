@@ -1,1 +1,2 @@
-<app-film-list></app-film-list>
+<app-search-input (searchWordChange)="setSearchWord($event)"></app-search-input>
+<app-film-list [filmsListFiltered]="filteredFilms()"></app-film-list>

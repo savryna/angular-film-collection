@@ -1,10 +1,9 @@
-@let filmsSearch = filteredFilms();
+@let filmsList = filmsListFiltered();
 
 <div class="films-list-page">
-  <app-search-input (searchWordChange)="setSearchWord($event)"></app-search-input>
-  @if (filmsSearch.length > 0) {
+  @if (filmsList.length > 0) {
     <div class="films-container">
-      @for (filmItem of filmsSearch; track filmItem.id) {
+      @for (filmItem of filmsList; track filmItem.id) {
         <app-film-card [filmData]="filmItem" (filmClick)="redirectDetailsPage(filmItem)"></app-film-card>
       }
     </div>
