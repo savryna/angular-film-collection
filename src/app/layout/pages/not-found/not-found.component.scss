@@ -4,7 +4,11 @@
 :host {
   display: block;
 
-  background-image: url('/img/bg-404.png');
+  background-image: image-set(
+    url('/img/bg-404-webp.webp') type('image/webp'),
+    url('/img/bg-404-avif') type('image/avif'),
+    url('/img/noise-bg.png') type('image/png')
+  );
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -50,6 +54,7 @@
     height: clamp(24px, 3vw, 36px);
 
     font-size: clamp(24px, 3vw, 36px);
+    font-variation-settings: 'FILL' 1;
     text-shadow:
       -3px -3px variables.$primary-dark,
       2px 3px variables.$glitch-red;

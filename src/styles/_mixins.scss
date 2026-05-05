@@ -2,7 +2,12 @@
 
 @mixin dark-bg {
   border-radius: variables.$radius-md;
-  background: url('/img/noise-bg.png');
+  background-color: variables.$primary-dark;
+  background-image: image-set(
+    url('/img/noise-bg-webp.webp') type('image/webp'),
+    url('/img/noise-bg-avif') type('image/avif'),
+    url('/img/noise-bg.png') type('image/png')
+  );
   background-size: 100px;
 }
 
