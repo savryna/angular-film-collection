@@ -1,5 +1,4 @@
 import { NgClass } from '@angular/common';
-import type { InputSignal } from '@angular/core';
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 
 @Component({
@@ -11,9 +10,9 @@ import { ChangeDetectionStrategy, Component, input, output } from '@angular/core
 })
 export class FavoriteBtnComponent {
   public readonly clicked = output();
-  public favoriteStatus: InputSignal<boolean> = input.required();
+  public favoriteStatus = input.required<boolean>();
 
-  public handleClick(event: Event): void {
+  public handleClick(event: PointerEvent): void {
     event.stopPropagation();
 
     this.clicked.emit();

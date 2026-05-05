@@ -2,10 +2,11 @@ import { ChangeDetectionStrategy, Component, effect, inject, signal } from '@ang
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 import { FilmService } from '../../../films/services/film.service';
+import { ROUTES_LIST } from '../../../shared/constans';
 
 type Breadcrumb = {
   label: string;
-  url: string;
+  url?: string;
 };
 
 @Component({
@@ -17,24 +18,21 @@ type Breadcrumb = {
 })
 export class BreadcrumbsComponent {
   private readonly activatedRoute = inject(ActivatedRoute);
-  private readonly filmService = inject(FilmService);
   private readonly router = inject(Router);
+  private readonly filmService = inject(FilmService);
 
   public readonly breadcrumbs = signal<Breadcrumb[]>([]);
 
   constructor() {
     effect(() => {
-      this.router.currentNavigation();
-
-      if (this.router.url !== '') {
+      if (this.router.currentNavigation() === null) {
         this.buildBreadcrumbs();
       }
     });
-    this.buildBreadcrumbs();
   }
 
   private buildBreadcrumbs(): void {
-    const breadcrumbs = [];
+    const breadcrumbs: Breadcrumb[] = [];
     let currentRoute = this.activatedRoute.firstChild;
 
     while (currentRoute !== null) {
@@ -52,8 +50,8 @@ export class BreadcrumbsComponent {
         breadcrumbs.push(
           ...[
             state?.from ?? {
-              label: 'Home',
-              url: '/',
+              label: state.from?.label ?? 'Home',
+              url: state.from?.url ?? ROUTES_LIST.main,
             },
 
             {
