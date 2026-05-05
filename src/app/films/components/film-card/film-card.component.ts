@@ -1,9 +1,9 @@
 import type { InputSignal } from '@angular/core';
 import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
 
-import { FavoriteBtnComponent } from '../../../shared/button/favorite-btn/favorite-btn.component';
 import type { FilmData } from '../../models/films.model';
 import { FilmService } from '../../services/film.service';
+import { FavoriteBtnComponent } from '../favorite-btn/favorite-btn.component';
 
 @Component({
   selector: 'app-film-card',

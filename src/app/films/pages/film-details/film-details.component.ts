@@ -2,8 +2,8 @@ import { Location } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, effect, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { FavoriteBtnComponent } from '../../../shared/button/favorite-btn/favorite-btn.component';
 import { ROUTES_LIST } from '../../../shared/constans';
+import { FavoriteBtnComponent } from '../../components/favorite-btn/favorite-btn.component';
 import { DurationPipe } from '../../pipes/duration-pipe';
 import { FilmService } from '../../services/film.service';
 
